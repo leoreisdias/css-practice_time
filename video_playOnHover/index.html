@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Play Video on Hover</title>
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      <video src="./allmight.mp4" type="video/mp4" loop class="clip" ></video>
+    </div>
+    <div class="box">
+      <video src="./deku.mp4" type="video/mp4" loop class="clip" ></video>
+    </div>
+    <div class="box">
+      <video src="./noum.mp4" type="video/mp4" loop class="clip" ></video>
+    </div>
+    <div class="box">
+      <video src="./todoroki.mp4" type="video/mp4" loop class="clip" ></video>
+    </div>
+  </div>
+
+  <script>
+    const clip = document.querySelectorAll('.clip');
+    for( let i = 0; i < clip.length; i++){
+      clip[i].addEventListener('mouseenter', (e) => {
+        clip[i].play();
+        clip[i].removeAttribute('muted')
+      })
+      
+      clip[i].addEventListener('mouseout', (e) => {
+        clip[i].pause();
+        clip[i].setAttribute('muted', '')
+      })
+    }
+  </script>
+</body>
+</html>
